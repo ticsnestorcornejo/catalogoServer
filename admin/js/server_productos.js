@@ -1,13 +1,7 @@
-//const dominio = "https://www.nestorcornejo.com/catalogoServer/main/";
-const dominio = "http://localhost/catalogoServer/main/";
-const HTML_HOME = "dashboard.html";
 
+class CLASS_SERVER_PRODUCTOS {
 
-
-
-class CLASS_SERVER_CATEGORIAS {
-
-    url = dominio + "categorias.php";
+    url = dominio + "productos.php";
     sendPostRequest = (ejecutar = () => { }, datos) => {
         $.ajax({
             data: datos,
@@ -52,28 +46,28 @@ class CLASS_SERVER_CATEGORIAS {
         this.sendGetRequest(ejecutar, datos);
     }
 
-    UPDATE_CODIGO_CATEGORIAS = (ejecutar = () => { }, datos) => {
+    UPDATE_CODIGO_PRODUCTOS = (ejecutar = () => { }, datos) => {
 
-        let instruction = "update_codigo_categorias";
+        let instruction = "update_codigo_productos";
         datos.instruction = instruction;
         this.sendPostRequest(ejecutar, datos);
     }
 
-    UPDATE_NOMBRE_CATEGORIAS = (ejecutar = () => { }, datos) => {
+    UPDATE_NOMBRE_PRODUCTOS = (ejecutar = () => { }, datos) => {
 
-        let instruction = "update_nombre_categorias";
+        let instruction = "update_nombre_productos";
         datos.instruction = instruction;
         this.sendPostRequest(ejecutar, datos);
     }
-    UPDATE_DESCRIPCION_CATEGORIAS = (ejecutar = () => { }, datos) => {
+    UPDATE_DESCRIPCION_PRODUCTOS = (ejecutar = () => { }, datos) => {
 
-        let instruction = "update_descripcion_categorias";
+        let instruction = "update_descripcion_productos";
         datos.instruction = instruction;
         this.sendPostRequest(ejecutar, datos);
     }
-    UPDATE_ESTADO_CATEGORIAS = (ejecutar = () => { }, datos) => {
+    UPDATE_ESTADO_PRODUCTOS = (ejecutar = () => { }, datos) => {
 
-        let instruction = "update_estado_categorias";
+        let instruction = "update_estado_productos";
         datos.instruction = instruction;
         this.sendPostRequest(ejecutar, datos);
     }
@@ -81,6 +75,6 @@ class CLASS_SERVER_CATEGORIAS {
     DELETE = (ejecutar = () => { }, datos) => {
         let instruction = "delete";
         console.log(datos);
-        $.get(this.url + "?instruction=" + instruction + "&idcategorias=" + datos.idcategorias, function (data, status) { ejecutar(data.response); });
+        $.get(this.url + "?instruction=" + instruction + "&idproductos=" + datos.idproductos, function (data, status) { ejecutar(data.response); });
     }
 } 
